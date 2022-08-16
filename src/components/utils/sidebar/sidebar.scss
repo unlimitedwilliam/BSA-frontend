@@ -1,0 +1,75 @@
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/abstracts/variables';
+
+.sidebar {
+    @include flex(center, flex-start);
+    flex-direction: column;
+    color: $beige;
+    width: $sideBarWidth;
+    background-color: $mainBg;
+    height: 100vh; 
+    transition: all 0.2s ease;
+
+    &__menu {
+        width: 100%;
+        height: 5rem;
+        @include flex(center, flex-start);
+        border-bottom: 1px solid $bodyBg;
+        margin-top: 16px;
+
+        &__icon {
+            min-width: 2rem;
+            margin: 0 1.5rem;
+        }
+
+        &__text {
+            display: none;
+        }
+    }    
+
+    &__item {
+        @include flex(center, flex-start);
+        transition: color 0.5s ease-in-out;
+        width: 100%;
+        height: 5rem;
+
+        &__icon{
+            min-width: 2rem;
+            margin: 0 1.5rem;
+        }
+
+        &__text{
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        &:hover {
+            color: $mainColor
+        }
+
+        &.active {
+            color: $mainColor;
+            background-color: $bodyBg;
+            font-size: $fontSizeMedium;
+        }
+
+        &:last-child {
+            margin-top: auto;
+        }
+    }
+
+    &:hover {
+        width: 12rem;
+        
+    }
+
+    &:hover .sidebar__item__text{
+        display: block;
+        opacity: 1;
+    }
+
+    &:hover .sidebar__menu__text {
+        display: block;
+    }
+}

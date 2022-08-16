@@ -1,0 +1,119 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.login {
+    @include flex();
+    width: 100vw; 
+    height: 100vh;
+    background: url('../../../../public/pexels-abby-chung-1106468.jpg');
+    background-size: cover;
+
+    &__container {
+        @include flex(); 
+        flex-direction: column;
+        height: 80vh;
+        width: 30vw;
+        background: #ffffff26;
+        box-shadow: 0px 8px 24px 0px black;
+        backdrop-filter: blur(5px);
+        border-radius: 8px;
+        color: white; 
+        text-transform: uppercase;
+
+        &__title {
+            margin: 2rem 0 1rem 0;
+            letter-spacing: 0.2rem;
+            cursor: default;
+        }
+
+        &__input {
+            @include flex(center, space-between);
+            flex-direction: column;
+            height: 20%; 
+            width: 100%;
+
+            & *{
+                background: #ffffff26;
+                box-shadow: 0px 8px 24px 0px black;
+                border-radius: 24px;
+                height: 3rem; 
+                width: 80%;
+                padding: 1rem;
+                margin: 0.5rem;
+                border: none; 
+                outline: none;
+                font-size: 1rem;
+                font-weight: bold;
+                font-family: 'Kdam Thmor Pro', sans-serif;
+                color: white; 
+
+                &::placeholder {
+                    color: white;
+                }
+
+                &:focus {
+                    display: inline-block;
+                    backdrop-filter: blur(40px);
+                    border-radius: 24px;
+                }
+            }
+        }
+
+        &__button{
+            @include flex(center, space-between);
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+
+            &__login {
+                background: linear-gradient(to right, #393F45ff 10%, #953F27ff 70%);
+                text-transform: uppercase;
+                width: 30%; 
+                height: 2.5rem; 
+                border: none; 
+                border-radius: 8px;
+                color: white;
+                cursor: pointer; 
+                font-family: 'Kdam Thmor Pro', sans-serif;
+                letter-spacing: 0.2rem;
+                margin: 3rem 0 1rem 0;
+            }
+
+            &__or{
+                text-transform: uppercase;
+                font-size: 10px;
+                letter-spacing: 0.4rem;
+                margin: 0.5rem 0 0.5rem 0;
+                cursor: default;
+            }
+
+            &__rule {
+                height: 3px;
+                width: 90%;
+                border-radius: 10%;
+                border: none;
+                margin: 0.25rem 0 1rem 0;
+                background: linear-gradient(to right, #393F45ff 20%, #953F27ff 80%);
+            }
+
+            &__icon {
+                @include flex(center, space-evenly);
+                margin: 1.5rem 0 1.5rem 0;
+                width: 80%;
+                 & *{
+                    cursor: pointer;
+                 }
+            }
+
+            &__forgot {
+                font-size: 10px;
+                cursor: pointer;
+            }
+
+            &__signup {
+                font-size: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.summary-box {
+    @include flex(stretch, flex-start);
+    padding: 20px 30px;
+    border-radius: $borderRadius;
+    background-color: $mainBg;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    &__info{
+        @include flex(flex-start, space-around);
+        flex-direction: column;
+        width: 60%;
+
+        &__title {
+            font-size: $fontSizeMedium;
+            font-weight: 600;
+            line-height: 1.2;
+
+            span {
+                font-size: 9px;
+                font-weight: 500;
+            }
+        }
+
+        &__value {
+            font-size: $fontSizeMedium;
+            font-weight: 600;
+        }
+    }
+
+    &__chart {
+        width: 40%;
+
+        &__value {
+            margin-top: -30%;
+            font-weight: 600;
+        }
+    }
+}

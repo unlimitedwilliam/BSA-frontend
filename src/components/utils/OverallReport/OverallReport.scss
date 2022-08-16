@@ -1,0 +1,25 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts//mixins';
+
+.overall__item{
+    @include flex(center, flex-start);
+    width: 100%;
+
+    &__icon {
+        @include flex;
+        width: 75px; 
+        height: 50px; 
+        margin-right: $spacing;
+        font-size: 2rem;
+        margin: 8px;
+        border-radius: 90px;
+        background-color: $mainBg;
+    }
+
+    &__info {
+        @include flex(flex-start, space-between);
+        flex-direction: column;
+        width: 100%;
+        padding-left: 50px;
+    }
+}
